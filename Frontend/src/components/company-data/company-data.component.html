@@ -1,0 +1,17 @@
+<div class="container">
+   <div class="title"> 
+    Dados e Metas da Empresa
+   </div>
+  <div class="containerInternal">
+  <div class="nameAndGoal">
+    <p>Code-Bank</p> -
+    <p class="valueGoal">Meta: {{ goal | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</p>  <!-- Aqui define a meta da empresa -->
+  </div>
+   <div class="alterGoal">
+     <label class="label" for="goal">Alterar Meta</label>
+     <input class="input" type="number" placeholder="12.000" name="goal" [(ngModel)]="valueAlterGoal">
+     <button (click)="alterValueGoal(valueAlterGoal)" class="btn"><i class="animation"></i>Alterar<i class="animation"></i>
+     </button>
+   </div>
+  </div>
+</div>  
