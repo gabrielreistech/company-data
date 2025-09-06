@@ -5,8 +5,9 @@
     align-items: center;
     gap: 6rem;
     width: 58vw;
-    height: 4.9vh;
+    height: 6vh;
     border-radius: 0.4rem;
+    margin-top: 0.3rem;
     margin-bottom: 0.3rem;
     background-color: rgb(226, 222, 221);
     box-shadow: -1px 1px 9px 2px rgba(0,0,0,0.75);

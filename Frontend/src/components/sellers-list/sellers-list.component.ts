@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Client } from '../../interfaces/client-interface';
+import { Seller } from '../../interfaces/seller-interface';
 
 @Component({
   selector: 'app-sellers-list',
@@ -8,9 +8,9 @@ import { Client } from '../../interfaces/client-interface';
 })
 export class SellersListComponent {
 
-   clients:Client[] = [];
+  sellers:Seller[] = [];
 
-   client:Client = {
+   seller:Seller = {
      name: "Flávio Augusto",
      region: "Sul",
      totalSelled: 5000,

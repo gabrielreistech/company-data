@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Client } from '../../interfaces/client-interface';
+import { Seller } from '../../interfaces/seller-interface';
 
 @Component({
   selector: 'app-card',
@@ -8,5 +8,5 @@ import { Client } from '../../interfaces/client-interface';
 })
 export class CardComponent {
 
-  @Input() client?: Client | undefined;
+  @Input() seller?: Seller | undefined;
 }

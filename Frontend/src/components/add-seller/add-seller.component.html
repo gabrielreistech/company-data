@@ -2,14 +2,14 @@
   <div class="containerInternal">
     <div class="title">Adicionar Vendedor</div>
     <div class="inputsAndButton">
-    <form class="form" (submit)="seeClient(client)">
+    <form class="form" (submit)="seeSeller(seller)">
         <div>
             <label for="name">Nome: </label>
-            <input type="text" placeholder="Digite o nome do vendedor" [(ngModel)]="client.name" name="name">
+            <input type="text" placeholder="Digite o nome do vendedor" [(ngModel)]="seller.name" name="name">
         </div>
         <div>
             <label for="region">Região:</label>
-            <select id="region" [(ngModel)]="client.region" name="region">
+            <select id="region" [(ngModel)]="seller.region" name="region">
               <option value="Norte">Norte</option>
               <option value="Nordeste">Nordeste</option>
               <option value="CentroOeste">Centro-Oeste</option>
@@ -19,11 +19,11 @@
           </div>
         <div class="inputValueConsumed">
             <label for="name">Total vendido no ano: </label>
-            <input type="number" placeholder="1550" [(ngModel)]="client.totalSelled" name="valueConsumed">
+            <input type="number" placeholder="1550" [(ngModel)]="seller.totalSelled" name="valueConsumed">
         </div>
     </form>
     <div>
-        <button  (click)="seeClient(client)" class="btn"><i class="animation"></i>Adicionar<i class="animation"></i>
+        <button  (click)="seeSeller(seller)" class="btn"><i class="animation"></i>Adicionar<i class="animation"></i>
         </button>
     </div>  
    </div> 
