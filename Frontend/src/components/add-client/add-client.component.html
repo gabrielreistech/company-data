@@ -1,0 +1,31 @@
+<div class="containerExtern">
+  <div class="containerInternal">
+    <div class="titleForm">Adicionar Vendedor</div>
+    <div class="inputsAndButton">
+    <form class="form" (submit)="seeClient(client)">
+        <div>
+            <label for="name">Nome: </label>
+            <input type="text" placeholder="Digite o nome do vendedor" [(ngModel)]="client.name" name="name">
+        </div>
+        <div>
+            <label for="region">Região:</label>
+            <select id="region" [(ngModel)]="client.region" name="region">
+              <option value="Norte">Norte</option>
+              <option value="Nordeste">Nordeste</option>
+              <option value="CentroOeste">Centro-Oeste</option>
+              <option value="Sudeste">Sudeste</option>
+              <option value="Sul">Sul</option>
+            </select>
+          </div>
+        <div class="inputValueConsumed">
+            <label for="name">Total vendido no ano: </label>
+            <input type="number" placeholder="1550" [(ngModel)]="client.totalSelled" name="valueConsumed">
+        </div>
+    </form>
+    <div>
+        <button  (click)="seeClient(client)" class="btn"><i class="animation"></i>Adicionar<i class="animation"></i>
+        </button>
+    </div>  
+   </div> 
+   </div> 
+</div>
