@@ -6,7 +6,6 @@ import { CompanyDataComponent } from './company-data/company-data.component';
 import { SellersListComponent } from './sellers-list/sellers-list.component';
 import { CardComponent } from './card/card.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
-import { ClientCardComponent } from './client-card/client-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import { ClientCardComponent } from './client-card/client-card.component';
     SellersListComponent,
     CardComponent,
     LineChartComponent,
-    ClientCardComponent,
   ],
   imports: [
     CommonModule,
@@ -26,7 +24,6 @@ import { ClientCardComponent } from './client-card/client-card.component';
     CompanyDataComponent,
     SellersListComponent,
     LineChartComponent,
-    ClientCardComponent
   ]
 })
 export class ComponentsModule { }

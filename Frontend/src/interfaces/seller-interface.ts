@@ -1,6 +1,6 @@
-export interface Client {
+export interface Seller {
     name: string;
     region: string;
     totalSelled: number;
-    mediumMonth: number;
+    mediumMonth?: number;
   }
