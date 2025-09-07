@@ -63,6 +63,9 @@ export class LineChartComponent implements AfterViewInit {
               size: 14,
               weight: 'bold'
             }
+          },
+          grid: {
+            color: 'rgba(0,0,0,0.8)'
           }
         },
         y: {
@@ -71,6 +74,9 @@ export class LineChartComponent implements AfterViewInit {
             font: {
               size: 11
             }
+          },
+          grid: {
+            color: 'rgba(0,0,0,0.8)'
           }
         }
       }
