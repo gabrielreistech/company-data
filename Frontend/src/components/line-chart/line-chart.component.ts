@@ -1,7 +1,8 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import {
   Chart,
-  ChartConfiguration,
+  ChartData,
+  ChartOptions,
   LineController,
   LineElement,
   PointElement,
@@ -11,7 +12,6 @@ import {
   Filler
 } from 'chart.js';
 
-// Registrar controllers, elementos e plugins necessários
 Chart.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Title, Filler);
 
 @Component({
@@ -23,32 +23,63 @@ export class LineChartComponent implements AfterViewInit {
   @ViewChild('myChart') myChart!: ElementRef<HTMLCanvasElement>;
 
   ngAfterViewInit() {
-    const config: ChartConfiguration<'line'> = {
-      type: 'line',
-      data: {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril'],
-        datasets: [
-          {
-            label: 'Vendas',
-            data: [10, 25, 15, 30],
-            borderColor: 'blue',
-            backgroundColor: 'rgba(30,144,255,0.3)',
-            fill: true,
-            tension: 0.4
+
+    const data: ChartData<'line'> = {
+      labels: [
+        'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio',
+        'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro',
+        'Novembro', 'Dezembro'
+      ],
+      datasets: [
+        {
+          label: 'Vendas',
+          data: [10, 25, 15, 30, 40, 50, 20, 54, 12, 95, 30, 75],
+          borderColor: 'red',
+          backgroundColor: 'rgba(0,255,255,0.3)',
+          fill: true,
+          tension: 0.4
+        }
+      ]
+    };
+
+    const options: ChartOptions<'line'> = {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Gráfico de Vendas Mensais',
+          color: 'black',
+          font: {
+            size: 18,
+            weight: 'bold'
           }
-        ]
+        }
       },
-      options: {
-        responsive: true,
-        plugins: {
-          title: {
-            display: true,
-            text: 'Gráfico de Vendas Mensais'
+      scales: {
+        x: {
+          ticks: {
+            color: 'black',
+            font: {
+              size: 14,
+              weight: 'bold'
+            }
+          }
+        },
+        y: {
+          ticks: {
+            color: 'black',
+            font: {
+              size: 11
+            }
           }
         }
       }
     };
 
-    new Chart(this.myChart.nativeElement, config);
+    new Chart(this.myChart.nativeElement, {
+      type: 'line',
+      data,
+      options
+    });
   }
 }
