@@ -1,13 +1,13 @@
-package br.com.clientinsight;
+package br.com.companydata;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ClientinsightApplication {
+public class CompanyDataApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ClientinsightApplication.class, args);
+		SpringApplication.run(CompanyDataApplication.class, args);
 	}
 
 }

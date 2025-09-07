@@ -1,8 +1,30 @@
 .container{
     overflow-x: auto;
-    width: 60vw;
-    max-height: 30vh;
+    width: 59.7vw;
+    max-height: 26vh;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
+/* Largura da barra */
+::-webkit-scrollbar {
+    width: 5px; /* horizontal = height */
+  }
+  
+  /* Fundo da barra */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+  }
+  
+  /* "Polegar" que arrasta */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0); 
+    border-radius: 10px;
+  }
+  
+  /* Hover do polegar */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

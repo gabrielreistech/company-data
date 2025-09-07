@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class CompanyDataComponent {
 
+  nameButton:string = 'Alterar';
+
   goal:number = 1000000;
 
   valueAlterGoal:number | null = null;

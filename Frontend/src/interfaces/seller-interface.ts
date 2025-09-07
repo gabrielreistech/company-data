@@ -3,4 +3,5 @@ export interface Seller {
     region: string;
     totalSelled: number;
     mediumMonth?: number;
+    months:number[];
   }

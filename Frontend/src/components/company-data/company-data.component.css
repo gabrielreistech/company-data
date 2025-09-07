@@ -1,12 +1,12 @@
 .container {
-    background-color: rgb(233, 228, 228); 
+    background-color: rgb(241, 99, 47);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 60vw;
-    height: 15vh;
-    border-bottom: 2px solid black;
+    width: 59vw;
+    height: 10vh;
+    border: 2px 2px 0px 2px solid black;
 }
 
 .containerInternal {
@@ -54,13 +54,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    background: #ec5003;
+    background: rgba(127,255,212);
     min-width: clamp(100px, 5vw, 200px);
     border: 0;
     border-radius: 4px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
     box-sizing: border-box;
-    color: #fff;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 1.2px;

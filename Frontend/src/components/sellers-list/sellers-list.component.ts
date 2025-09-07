@@ -14,6 +14,7 @@ export class SellersListComponent {
      name: "Flávio Augusto",
      region: "Sul",
      totalSelled: 5000,
-     mediumMonth: 400
+     mediumMonth: 400,
+     months: new Array(12).fill(0)
    }
 }

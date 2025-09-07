@@ -9,4 +9,6 @@ import { Seller } from '../../interfaces/seller-interface';
 export class CardComponent {
 
   @Input() seller?: Seller | undefined;
+
+  nameButton:string = 'Desligar';
 }

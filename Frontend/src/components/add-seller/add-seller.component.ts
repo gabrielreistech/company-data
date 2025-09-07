@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Seller } from '../../interfaces/seller-interface';
+import { dataTransportService } from '../../services/dataTransport.service';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'app-add-seller',
@@ -8,14 +10,14 @@ import { Seller } from '../../interfaces/seller-interface';
 })
 export class AddSellerComponent {
 
+  constructor(private sellerService: HttpService){}
+
   seller:Seller = {} as Seller;
- 
-  seeSeller(seller:Seller){
-    this.calculoMedium(seller.totalSelled);
-    console.log(seller);
+
+  nameButton:string = 'Adicionar';
+
+  addSeller(seller:Seller){
+     this.sellerService.addSeller(seller);
   }
 
-  calculoMedium(totalSelledYear:number): void{
-      this.seller.mediumMonth = parseFloat((totalSelledYear/12).toFixed(2));
-  }
 }

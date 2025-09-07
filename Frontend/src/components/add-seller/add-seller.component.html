@@ -2,7 +2,7 @@
   <div class="containerInternal">
     <div class="title">Adicionar Vendedor</div>
     <div class="inputsAndButton">
-    <form class="form" (submit)="seeSeller(seller)">
+    <form class="form" (submit)="addSeller(seller)">
         <div>
             <label for="name">Nome: </label>
             <input type="text" placeholder="Digite o nome do vendedor" [(ngModel)]="seller.name" name="name">
@@ -23,8 +23,7 @@
         </div>
     </form>
     <div>
-        <button  (click)="seeSeller(seller)" class="btn"><i class="animation"></i>Adicionar<i class="animation"></i>
-        </button>
+      <app-button (click)="addSeller(seller)" [nameButton]="nameButton"></app-button>
     </div>  
    </div> 
    </div> 
