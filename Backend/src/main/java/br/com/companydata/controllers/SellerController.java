@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/client")
+@RequestMapping("/seller")
+@CrossOrigin(origins = "http://localhost:4200")
 public class SellerController implements SellerControllerInterface {
 
     SellerService clientService;

@@ -6,6 +6,7 @@ import { AppComponent } from './app/app.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localePt);
 
@@ -19,6 +20,7 @@ registerLocaleData(localePt);
     AppRoutingModule,
     PagesModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR'}

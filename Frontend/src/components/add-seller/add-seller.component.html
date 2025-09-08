@@ -2,7 +2,7 @@
   <div class="containerInternal">
     <div class="title">Adicionar Vendedor</div>
     <div class="inputsAndButton">
-    <form class="form" (submit)="addSeller(seller)">
+    <form class="form" (ngSubmit)="addSeller(seller)">
         <div>
             <label for="name">Nome: </label>
             <input type="text" placeholder="Digite o nome do vendedor" [(ngModel)]="seller.name" name="name">
@@ -18,13 +18,13 @@
             </select>
           </div>
         <div class="inputValueConsumed">
-            <label for="name">Total vendido no ano: </label>
-            <input type="number" placeholder="1550" [(ngModel)]="seller.totalSelled" name="valueConsumed">
+            <label for="totalSelled">Total vendido no ano: </label>
+            <input type="number" placeholder="1550" [(ngModel)]="seller.totalSelled" name="totalSelled">
         </div>
+        <div>
+          <app-button type="submit" [nameButton]="nameButton"></app-button>
+        </div> 
     </form>
-    <div>
-      <app-button (click)="addSeller(seller)" [nameButton]="nameButton"></app-button>
-    </div>  
    </div> 
    </div> 
 </div>

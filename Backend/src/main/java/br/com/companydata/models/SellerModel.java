@@ -27,7 +27,7 @@ public class SellerModel {
     @Column(nullable = true, name = "media_mensal")
     private BigDecimal mediumMonth;
 
-    @Column(nullable = true, name = "lista_mensal")
+    @ElementCollection
     private List<MonthModel> month;
 
     public SellerModel() {

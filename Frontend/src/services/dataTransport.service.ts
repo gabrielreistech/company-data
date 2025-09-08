@@ -31,7 +31,6 @@ export class dataTransportService {
     this.listSellers.next(listUpdate);
  }
 
-
   mediaMensalGeral(seller:Seller[]){
      for(let i = 0; i < seller.length; i++){
        if(seller[i] && seller[i].months){
