@@ -10,14 +10,14 @@
       "prefix": "app",
       "targets": {
         "build": {
-          "executor": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/company-data",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico","src/assets"],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.css"],
             "scripts": []
           },
@@ -29,48 +29,48 @@
               ],
               "outputHashing": "all",
               "optimization": true,
-              "sourceMap": false,
-              "extractCss": true
+              "sourceMap": false
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "extractCss": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
-          "executor": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "company-data:build:production"
+              "buildTarget": "company-data:build:production"
             },
             "development": {
-              "browserTarget": "company-data:build:development"
+              "buildTarget": "company-data:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
         "test": {
-          "executor": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": ["zone.js","zone.js/testing"],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "assets": ["src/favicon.ico","src/assets"],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.css"],
             "scripts": []
           }
         },
         "extract-i18n": {
-          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "company-data:build"
+            "buildTarget": "company-data:build"
           }
         }
       }
     }
   },
-  "cli": { "analytics": false }
+  "cli": {
+    "analytics": false
+  }
 }

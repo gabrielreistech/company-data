@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Seller } from '../interfaces/seller-interface';
-import { dataTransportService } from './dataTransport.service';
+import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -8,7 +8,22 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-  constructor(private dataService: dataTransportService, private http:HttpClient) { }
+  seller:Seller[] = [];
+
+  private listSellers = new BehaviorSubject<Seller[]>([]);
+  
+  public listSellers$ = this.listSellers.asObservable();
+
+  private monthAverrage = new BehaviorSubject<number[]>([]);
+
+  public monthAverrage$ = this.monthAverrage.asObservable();
+
+  counter:number = {} as number;
+
+  totalOfMonths:number[] = [];
+  
+
+  constructor(private http:HttpClient) { }
 
   addSeller(seller:Seller){
     console.log(seller + ' -> Foi enviado')
@@ -18,16 +33,33 @@ export class HttpService {
         error: (error) => console.log(error),
        });
 
-    
-    //seller.mediumMonth = this.calculoMedium(seller.totalSelled);
-    //this.dataService.addSellerList(seller);
     console.log(seller);
   }
 
-  viewSellerList(){}
-  
+
+  addSellerList(seller:Seller){
+    const listCurrent = this.listSellers.getValue();
+    const listUpdate = [...listCurrent, seller];
+    this.listSellers.next(listUpdate);
+ }
+
 
   calculoMedium(totalSelledYear:number): number{
     return parseFloat((totalSelledYear/12).toFixed(2));
   }
+
+  totalOverallAverage(seller:Seller[]){
+    for(let i = 0; i < seller.length; i++){
+      if(seller[i] && seller[i].months){
+       for(let j = 0; j < seller[i].months.length; j++){
+        if(seller[i].months[j] != null){ 
+        this.counter += seller[i].months[j];
+       }
+      }
+      this.totalOfMonths.push(this.counter);
+      this.monthAverrage.next(this.totalOfMonths);
+      this.counter = 0;
+     }
+   }
+ }
 }

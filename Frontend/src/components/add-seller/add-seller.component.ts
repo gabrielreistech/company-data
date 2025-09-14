@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Seller } from '../../interfaces/seller-interface';
-import { dataTransportService } from '../../services/dataTransport.service';
 import { HttpService } from '../../services/http.service';
 
 @Component({
@@ -12,9 +11,9 @@ export class AddSellerComponent {
 
   constructor(private sellerService: HttpService){}
 
-  seller:Seller = {} as Seller;
-
   nameButton:string = 'Adicionar';
+
+  seller:Seller = {} as Seller;
 
   addSeller(seller:Seller){
      this.sellerService.addSeller(seller);
